@@ -1,0 +1,17 @@
+datasource db {
+  provider = "mysql"
+  url      = "mysql://root:Momdadsis@143@localhost:3306/Book"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Book {
+  id              String     @id @default(uuid())
+  title           String     
+  author          String     
+  publicationYear Int
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime   @updatedAt
+}
