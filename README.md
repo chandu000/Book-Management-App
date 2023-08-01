@@ -24,8 +24,8 @@ Clone the Repository and go to repo folder
 ## Run
 # BackEnd:
    open terminal and go to backend folder run following commands
-    npm install
-    node server.js
+    .npm install
+    .node server.js
 # FrontEnd:
   open terminal and go to frontend folder run following commands
    >>npm install
