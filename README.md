@@ -23,17 +23,17 @@ Clone the Repository and go to repo folder
 
 ## Run
 # BackEnd:
-   open terminal and go to backend folder run following commands
-   -npm install
-   -node server.js
+open terminal and go to backend folder run following commands
+-npm install
+-node server.js
 # FrontEnd:
-  open terminal and go to frontend folder run following commands
-   -npm install
-  for ios go to ios folder and run following command
-   -pod install
-  go back to the frontend folder
-   -npx react-native run ios (for ios)
-   -npx react-native run android (for android)
+open terminal and go to frontend folder run following commands
+-npm install
+for ios go to ios folder and run following command
+-pod install
+go back to the frontend folder
+-npx react-native run ios (for ios)
+-npx react-native run android (for android)
 
 
    
