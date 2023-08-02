@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
   },
   addbuttonField:{
     fontSize: 30,
-    color:'#000000',
+    color:'#fff',
     fontWeight:'bold'
   }
 });
