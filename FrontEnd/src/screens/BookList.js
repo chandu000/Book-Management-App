@@ -67,8 +67,7 @@ const BookList = ({navigation}) => {
       </View>
     </TouchableOpacity>
   );
-  console.log({filterYear, data, filterAuthor, searchQuery});
-
+  
   return (
     <View style={styles.container}>
       <SearchBar searchQuery={searchQuery} onSearch={setSearchQuery} />
