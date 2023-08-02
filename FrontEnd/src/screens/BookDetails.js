@@ -57,7 +57,7 @@ const BookDetail = ({route, navigation}) => {
       <View style={styles.imgcontainer}>
       <Image
         style={styles.image}
-        source={require('../images/closed_book.png')}
+        source={require('../images/open_book.webp')}
       />
       <Text style={styles.booktitle}>{title}</Text>
       </View>
@@ -80,7 +80,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#000000',
   },
   title: {
-    
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 10,

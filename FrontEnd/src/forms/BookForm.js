@@ -6,6 +6,7 @@ import {
   Button,
   StyleSheet,
   KeyboardAvoidingView,
+  TouchableOpacity,
 } from 'react-native';
 import {Formik} from 'formik';
 import * as yup from 'yup';
@@ -25,7 +26,6 @@ const BookForm = ({initialValues, onSubmit}) => {
 
   const handleDateChange = handleChange => (event, selected) => {
     setShowDatePicker(false);
-    console.log(selected, selected.getFullYear());
     if (selected) {
       handleChange(`${selected.getFullYear()}`);
 
@@ -63,13 +63,18 @@ const BookForm = ({initialValues, onSubmit}) => {
               <Text style={styles.error}>{errors.author}</Text>
             )}
 
-            <Button
-              title={`published on : ${selectedDate}`}
-              onPress={() => setShowDatePicker(true)}
-            />
+            <View style={styles.yearView}>
+            <Text style={styles.text}>Published on year:  </Text>
+            <TouchableOpacity
+            onPress={() => setShowDatePicker(true)}
+            >
+              <Text style={styles.yearButton}>{selectedDate}</Text>
+            </TouchableOpacity>
+            </View>
             {showDatePicker && (
               <DateTimePicker
                 value={new Date(selectedDate, 0)}
+                themeVariant='dark'
                 mode="date"
                 display='default'
                 onChange={handleDateChange(handleChange('publicationYear'))}
@@ -78,8 +83,11 @@ const BookForm = ({initialValues, onSubmit}) => {
             {touched.publicationYear && errors.publicationYear && (
               <Text style={styles.error}>{errors.publicationYear}</Text>
             )}
-
-            <Button title="Submit" onPress={handleSubmit} />
+            <View>
+            <TouchableOpacity style={styles.submitButton} onPress={handleSubmit}>
+              <Text style={styles.text}>Submit</Text>
+            </TouchableOpacity>
+            </View>
           </View>
         </KeyboardAvoidingView>
       )}
@@ -90,6 +98,8 @@ const BookForm = ({initialValues, onSubmit}) => {
 const styles = StyleSheet.create({
   formContainer: {
     padding: 20,
+    backgroundColor:'#000000',
+    flexDirection:'column'
   },
   input: {
     marginBottom: 10,
@@ -102,6 +112,34 @@ const styles = StyleSheet.create({
     color: 'red',
     marginBottom: 5,
   },
+  yearView:{
+    alignItems:'baseline',
+    flexDirection:'row',
+  },
+  yearButton:{
+    color:'#007AFF',
+    fontSize:18,
+    marginTop:5,
+    alignSelf:'center'
+  },
+  submitButton:{
+    height:25,
+    width:75,
+    color:'#fff',
+    fontSize:20,
+    marginTop:30,
+    alignSelf:'center',
+    borderRadius:6,
+    backgroundColor:'#FDAE37',
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  text:{
+    fontWeight:'bold',
+    fontSize:18,
+    color:'#fff'
+  }
+  
 });
 
 export default BookForm;
