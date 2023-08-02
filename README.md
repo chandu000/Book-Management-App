@@ -1,10 +1,4 @@
 ## Book-Management-App
-
-
-Uploading Simulator Screen Recording - iPhone 12  - 2023-08-02 at 08.29.17.mp4…
-
-
-
 ### For more information about how to build from scratch,project structure you can see the Documentation in Repo
 ## Technologies Used
 
