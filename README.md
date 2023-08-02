@@ -2,7 +2,7 @@
 ### For more information about how to build from scratch,project structure you can see the Documentation in Repo
 ## Technologies Used
 
-1. Node.js server using express fro backend
+1. Node.js server using express for backend
 2. Mysql Database
 3. Prisma as a ORM connected to a remote Mysql Database
 4. GraphQL APIs using Apollo Server to perform CRUD operations on books
