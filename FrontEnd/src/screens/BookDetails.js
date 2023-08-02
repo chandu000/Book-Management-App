@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet, Button} from 'react-native';
+import {View, Text, StyleSheet, Button, Image, Alert} from 'react-native';
 import {useQuery, gql, useMutation} from '@apollo/client';
 import {client} from '../client/client';
 
@@ -43,17 +43,32 @@ const BookDetail = ({route, navigation}) => {
   const handleDelete = () => {
     deleteBook({variables: {id}});
   };
-
+  const alert= () =>
+    Alert.alert('Are you sure you want delete this item', '', [
+      {
+        text: 'Cancel',
+        onPress:()=>console.log(),
+        style: 'cancel',
+      },
+      {text: 'OK', onPress:handleDelete},
+    ]);
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{title}</Text>
+      <View style={styles.imgcontainer}>
+      <Image
+        style={styles.image}
+        source={require('../images/closed_book.png')}
+      />
+      <Text style={styles.booktitle}>{title}</Text>
+      </View>
+      <Text style={styles.title}>Title: {title}</Text>
       <Text style={styles.author}>Author: {author}</Text>
       <Text style={styles.publicationYear}>Year: {publicationYear}</Text>
       <Button
         title="Edit"
         onPress={() => navigation.navigate('EditBook', {id})}
       />
-      <Button title="Delete" onPress={handleDelete} />
+      <Button title="Delete" onPress={alert} />
     </View>
   );
 };
@@ -65,9 +80,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#000000',
   },
   title: {
+    
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 10,
+    color:'#fff'
+  },
+  booktitle:{
+    fontSize: 25,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    alignSelf:'center',
     color:'#fff'
   },
   author: {
@@ -79,6 +102,14 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#888',
   },
+  image:{
+    alignSelf:'center',
+    width:200,
+    height:200
+  },
+  imgcontainer:{
+    flex:.5
+  }
 });
 
 export default BookDetail;
