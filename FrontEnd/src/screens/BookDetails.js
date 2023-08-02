@@ -44,7 +44,7 @@ const BookDetail = ({route, navigation}) => {
     deleteBook({variables: {id}});
   };
   const alert= () =>
-    Alert.alert('Are you sure you want delete this item', '', [
+    Alert.alert('Are you sure ?', ' you want to delete this item', [
       {
         text: 'Cancel',
         onPress:()=>console.log(),
