@@ -21,12 +21,12 @@
 ## usage 
 Clone the Repository and go to repo folder
 
-## Run
-# BackEnd:
+# Run
+## BackEnd:
 - open terminal and go to backend folder run following commands
 - npm install
 - node server.js
-# FrontEnd:
+## FrontEnd:
 - open terminal and go to frontend folder run following commands
 - npm install
 - for ios go to ios folder and run following command
