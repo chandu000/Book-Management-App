@@ -1,5 +1,5 @@
 ## Book-Management-App
-### For more information about how to build from scratch you see the Documentation in Repo
+### For more information about how to build from scratch you can see the Documentation in Repo
 ## Technologies Used
 
 1. Node.js server using express fro backend
