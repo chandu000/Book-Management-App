@@ -58,7 +58,7 @@ const BookList = ({navigation}) => {
       onPress={() => navigation.navigate('BookDetail', {id: item.id})}>
       <Image
         style={styles.image}
-        source={require('../images/closed_book.png')}
+        source={require('../constants/images/closed_book.png')}
       />
       <View>
         <Text style={styles.title}>{item.title}</Text>

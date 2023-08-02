@@ -57,7 +57,7 @@ const BookDetail = ({route, navigation}) => {
       <View style={styles.imgcontainer}>
       <Image
         style={styles.image}
-        source={require('../images/open_book.webp')}
+        source={require('../constants/images/open_book.webp')}
       />
       <Text style={styles.booktitle}>{title}</Text>
       </View>
