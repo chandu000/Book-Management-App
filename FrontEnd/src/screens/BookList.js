@@ -6,7 +6,6 @@ import {
   TouchableOpacity,
   StyleSheet,
   Image,
-  ImageBackground,
 } from 'react-native';
 import {useQuery, gql, useMutation} from '@apollo/client';
 import SearchBar from '../ SearchAndFilter/SearchBar';
@@ -30,7 +29,7 @@ const DELETE_BOOK = gql`
   }
 `;
 const BookList = ({navigation}) => {
-  const {loading, error, data, refetch} = useQuery(GET_BOOKS);
+  const {loading, error, data} = useQuery(GET_BOOKS);
   const [searchQuery, setSearchQuery] = useState('');
   const [filterYear, setFilterYear] = useState('');
   const [filterAuthor, setFilterAuthor] = useState('');
@@ -58,7 +57,7 @@ const BookList = ({navigation}) => {
       onPress={() => navigation.navigate('BookDetail', {id: item.id})}>
       <Image
         style={styles.image}
-        source={require('../constants/images/closed_book.png')}
+        source={require('../Assets/images/closed_book.png')}
       />
       <View>
         <Text style={styles.title}>{item.title}</Text>
@@ -100,7 +99,7 @@ const styles = StyleSheet.create({
   },
   listContent: {
     justifyContent: 'space-between',
-    paddingBottom: 20,
+    
   },
 
   itemContainer: {
@@ -136,7 +135,7 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 60,
-    marginVertical: 40,
+    marginVertical: 25,
     marginHorizontal: '85%',
     backgroundColor: '#FDAE37',
     justifyContent: 'center',
