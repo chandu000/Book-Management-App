@@ -47,7 +47,7 @@ const BookDetail = ({route, navigation}) => {
     Alert.alert('Are you sure ?', ' you want to delete this item', [
       {
         text: 'Cancel',
-        onPress:()=>console.log(),
+        onPress:()=>{},
         style: 'cancel',
       },
       {text: 'OK', onPress:handleDelete},
