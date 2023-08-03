@@ -21,13 +21,6 @@ const GET_BOOKS = gql`
     }
   }
 `;
-const DELETE_BOOK = gql`
-  mutation DeleteBook($id: ID!) {
-    deleteBook(id: $id) {
-      id
-    }
-  }
-`;
 const BookList = ({navigation}) => {
   const {loading, error, data} = useQuery(GET_BOOKS);
   const [searchQuery, setSearchQuery] = useState('');
